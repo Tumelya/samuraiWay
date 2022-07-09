@@ -5,17 +5,9 @@
   display: grid;
   grid-template-areas: "header header" "navbar content";
   grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 2fr 6fr;
   grid-gap: 10px;
 }
-
-
-
-
-
-
-
-/*Footer*/
 
 /*
 border-radius: 50px;

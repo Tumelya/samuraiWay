@@ -12,8 +12,10 @@ function App() {
         <div className="App">
             <Header/>
             <Navbar/>
+            <div className="content">
+                <Profile/>
+            </div>
             <Footer/>
-            <Profile/>
         </div>
     )
 }

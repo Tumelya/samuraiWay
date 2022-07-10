@@ -9,6 +9,9 @@
   grid-gap: 10px;
 }
 
+.content {
+  grid-area: content;
+}
 /*
 border-radius: 50px;
 box-shadow: 0 0 0 1px rgb(226, 226, 226), 0 0 3px #333;*/

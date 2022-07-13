@@ -1,4 +1,20 @@
 /*Navbar*/
 .navBar {
     grid-area: navbar;
+    background-color: #f5fff7;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: cornflowerblue;
+}
+
+a.activeLink {
+    color: blue;
+    font-size: 22px;
 }

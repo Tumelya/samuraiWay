@@ -1,0 +1,15 @@
+.cover {
+    grid-area: cover;
+}
+.avatar {
+    grid-area: ava;
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px rgb(226, 226, 226), 0 0 3px #333;
+}
+
+.description {
+    grid-area: description;
+    color: cornflowerblue;
+}

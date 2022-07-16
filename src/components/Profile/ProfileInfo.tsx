@@ -9,10 +9,12 @@ export const ProfileInfo = () => {
                 //src="https://img.freepik.com/premium-vector/japan-wave-ocean-illustration-asia-oriental-traditional-hokusai-line-art-design_149225-72.jpg?w=2000"
                  src="https://i.pinimg.com/736x/6c/75/9e/6c759eaf23c72d95a7ebdd54288f829e--japanese-painting-cookie-monster.jpg"
                  alt=""/>
-            <div>
-                <img className={s.avatar} src="https://cdn-icons-png.flaticon.com/512/1016/1016736.png" alt=""/>
+            <div className={s.avaDescBlock}>
+                <div>
+                    <img className={s.avatar} src="https://cdn-icons-png.flaticon.com/512/1016/1016736.png" alt=""/>
+                </div>
+                <div className={s.description}>Description here</div>
             </div>
-            <div className={s.description}>Description here</div>
         </>
     )
 }

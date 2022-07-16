@@ -9,8 +9,8 @@ export const Post = (props: PostType) => {
     return (
         <div className={s.item}>
             <img className={s.avatar} src="https://cdn-icons-png.flaticon.com/512/1016/1016736.png" alt="avatar"/>
-            <span>{props.message}</span>
-            <div>
+            <span className={s.message}>{props.message}</span>
+            <div className={s.likes}>
                 Likes: {props.likesCount}  Comment
             </div>
         </div>

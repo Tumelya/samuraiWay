@@ -1,5 +1,12 @@
 .cover {
-    grid-area: cover;
+
+}
+
+.avaDescBlock {
+    display: grid;
+    grid-template-areas: "ava description";
+    grid-template-columns: 170px 1fr;
+    grid-gap: 10px;
 }
 .avatar {
     grid-area: ava;
@@ -13,3 +20,4 @@
     grid-area: description;
     color: cornflowerblue;
 }
+

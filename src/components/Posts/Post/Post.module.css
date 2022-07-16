@@ -1,10 +1,25 @@
 .item {
     color: grey;
+    display: grid;
+    grid-template-areas: "ava message" "likes likes";
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 60px 1fr;
+    grid-gap: 10px;
 }
 
 .avatar {
+    grid-area: ava;
     width: 50px;
     height: 50px;
     border-radius: 50px;
     box-shadow: 0 0 0 1px rgb(226, 226, 226), 0 0 3px #333;
+    margin: 10px;
+}
+
+.message {
+    grid-area: message;
+}
+
+.likes {
+    grid-area: likes;
 }

@@ -23,10 +23,13 @@ export type PostsDataType = {
     message: string
     likesCount: number
 }
-type AppPropsType = {
+export type DataType = {
     dialogsData: Array<DialogsDataType>
     messagesData: Array<MessagesDataType>
     postsData: Array<PostsDataType>
+}
+type AppPropsType = {
+    state: any/*<DataType>*/
 }
 function App(props: AppPropsType) {
     return (
@@ -35,8 +38,8 @@ function App(props: AppPropsType) {
                 <Header/>
                 <Navbar/>
                 <div className="content">
-                    <Route path="/profile" render={() => <Profile postsData={props.postsData}/>}/>
-                    <Route path="/dialogs" render={() => <Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/>}/>
+                    <Route path="/profile" render={() => <Profile postsData={props.state.postsData}/>}/>
+                    <Route path="/dialogs" render={() => <Dialogs dialogsData={props.state.dialogsData} messagesData={props.state.messagesData}/>}/>
                     <Route path="/news" render={() => <News/>}/>
                     <Route path="/music" render={() => <Music/>}/>
                     <Route path="/settings" render={() => <Settings/>}/>

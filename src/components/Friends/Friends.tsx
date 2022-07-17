@@ -14,7 +14,6 @@ export const Friends: React.FC<FriendsPropsType> = (props) => {
 
     return (
         <div className={s.friends}>
-            {/*Friends*/}
             {props.friends.map(el => <Friend ava={el.ava} name={el.name}/>)}
         </div>
     )

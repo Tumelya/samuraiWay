@@ -10,46 +10,21 @@ import {Dialogs} from "./components/Dialogs/Dialogs";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
-export type DialogsDataType = {
-    id: number
-    ava: string
-    name: string
-}
-export type MessagesDataType = {
-    id: number
-    messages: string
-    time: string
-}
-export type PostsDataType = {
-    id: number
-    message: string
-    likesCount: number
-}
-export type FriendsType = {
-    id: number
-    ava: string
-    name: string
-}
-export type DataType = {
-    dialogsData: Array<DialogsDataType>
-    messagesData: Array<MessagesDataType>
-    postsData: Array<PostsDataType>
-    friends: Array<FriendsType>
-}
-type AppPropsType = {
-    state: any/*Array<DataType>*/
-}
-function App(props: AppPropsType) {
+import {state} from "./redux/state";
+import {Friends} from "./components/Friends/Friends";
+
+function App() {
     return (
             <div className="App">
                 <Header/>
-                <Navbar friends={props.state.friends}/>
+                <Navbar friends={state.friends}/>
                 <div className="content">
-                    <Route path="/profile" render={() => <Profile postsData={props.state.postsData}/>}/>
-                    <Route path="/dialogs" render={() => <Dialogs dialogsData={props.state.dialogsData} messagesData={props.state.messagesData}/>}/>
+                    <Route path="/profile" render={() => <Profile postsData={state.postsData}/>}/>
+                    <Route path="/dialogs" render={() => <Dialogs dialogsData={state.dialogsData} messagesData={state.messagesData}/>}/>
                     <Route path="/news" render={() => <News/>}/>
                     <Route path="/music" render={() => <Music/>}/>
                     <Route path="/settings" render={() => <Settings/>}/>
+                    <Route path="/friends" render={() => <Friends friends={state.friends}/>}/>
                 </div>
                 <Footer/>
             </div>

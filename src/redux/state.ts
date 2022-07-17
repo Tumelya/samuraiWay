@@ -1,4 +1,31 @@
-export let state = {
+export type DialogsDataType = {
+    id: number
+    ava: string
+    name: string
+}
+export type MessagesDataType = {
+    id: number
+    messages: string
+    time: string
+}
+export type PostsDataType = {
+    id: number
+    message: string
+    likesCount: number
+}
+export type FriendsType = {
+    id: number
+    ava: string
+    name: string
+}
+export type RootStateType = {
+    dialogsData: Array<DialogsDataType>
+    messagesData: Array<MessagesDataType>
+    postsData: Array<PostsDataType>
+    friends: Array<FriendsType>
+}
+
+export let state: RootStateType = {
     dialogsData: [
         {
             id: 1,

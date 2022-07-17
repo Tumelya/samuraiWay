@@ -17,3 +17,9 @@ margin-top: 20px;
 .name {
     margin-top: 12px;
 }
+
+.sideFriends {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}

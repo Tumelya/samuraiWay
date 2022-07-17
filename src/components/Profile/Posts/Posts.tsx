@@ -1,8 +1,9 @@
 import React from 'react';
 import s from './Posts.module.css';
 import {Post} from "./Post";
-import {PostsDataType} from "../../../App";
+
 import {Button} from "../../Button/Button";
+import {PostsDataType} from "../../../redux/state";
 
 type PostsPropsType = {
     postsData: Array<PostsDataType>

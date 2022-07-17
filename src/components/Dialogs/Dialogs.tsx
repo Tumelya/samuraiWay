@@ -13,16 +13,14 @@ export const Dialogs = () => {
         {id: 1, messages: "hi"}, {id: 2, messages: "what's up"},
         {id: 3, messages: "yo"}, {id: 4, messages: "nice look"}
     ]
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItem}>
-                Dialogs here:
-                <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>
-                <DialogItem name={dialogsData[1].name} id={dialogsData[1].id}/>
+                {dialogsData.map(el => <DialogItem name={el.name} id={el.id}/>)}
             </div>
             <div className={s.messages}>
-                <Message message={messagesData[0].messages}/>
-                <Message message={messagesData[1].messages}/>
+                {messagesData.map(el => <Message message={el.messages}/>)}
             </div>
         </div>
     )

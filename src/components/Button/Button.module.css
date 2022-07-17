@@ -1,0 +1,15 @@
+.butt {
+    background-color: rgb(226, 226, 226);
+    border: none;
+    border-radius: 5px;
+    padding: 7px 15px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.butt:hover {
+    background-color: #09A76D;
+}

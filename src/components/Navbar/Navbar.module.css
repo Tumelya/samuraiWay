@@ -2,6 +2,7 @@
 .navBar {
     grid-area: navbar;
     background-color: #f5fff7;
+    border-radius: 5px;
     padding: 10px;
 }
 
@@ -11,11 +12,11 @@ a {
 }
 
 a:hover {
-    color: cornflowerblue;
+    color: #22B37F;
 }
 
 a.activeLink {
-    color: blue;
+    color: #09A76D;
     font-size: 22px;
 }
 

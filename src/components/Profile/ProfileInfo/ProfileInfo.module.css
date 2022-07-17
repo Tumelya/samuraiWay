@@ -1,8 +1,10 @@
 .cover {
-
+    grid-area: cover;
+    border-radius: 5px;
 }
 
 .avaDescBlock {
+    grid-area: avaDesc;
     display: grid;
     grid-template-areas: "ava description";
     grid-template-columns: 170px 1fr;

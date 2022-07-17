@@ -1,2 +1,16 @@
 /*Profile*/
+/*
+.content {
+    display: grid;
+    grid-template-rows: 300px 2fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "profileInfo posts";
+    grid-gap: 10px;
+}
 
+.profileInfo {
+    grid-area: profileInfo;
+}
+.posts {
+    grid-area: posts;
+}*/

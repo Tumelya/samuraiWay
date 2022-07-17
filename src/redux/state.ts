@@ -13,5 +13,11 @@ export let state = {
         {id: 2, message: "How are you?", likesCount: 57},
         {id: 3, message: "Hi!", likesCount: 6},
         {id: 4, message: "Hi!", likesCount: 28}
+    ],
+    friends: [
+        {id: 1, ava: "https://cdn-icons-png.flaticon.com/512/1016/1016736.png", name: "Maksim"},
+        {id: 2, ava: "https://cdn-icons-png.flaticon.com/512/1016/1016736.png", name: "Maria"},
+        {id: 3, ava: "https://cdn-icons-png.flaticon.com/512/1016/1016736.png", name: "Merve"},
+        {id: 4, ava: "https://cdn-icons-png.flaticon.com/512/1016/1016736.png", name: "Alex"}
     ]
 }

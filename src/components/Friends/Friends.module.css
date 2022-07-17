@@ -1,0 +1,19 @@
+/*.friends {
+margin-top: 20px;
+}*/
+
+.friend {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ava {
+    width: 35px;
+    height: 35px;
+    border-radius: 15px;
+    box-shadow: 0 0 0 1px rgb(226, 226, 226), 0 0 2px #333;
+    margin: 10px 5px 5px 0px;
+}
+.name {
+    margin-top: 12px;
+}

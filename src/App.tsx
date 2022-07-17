@@ -10,20 +10,36 @@ import {Dialogs} from "./components/Dialogs/Dialogs";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
-
-
-function App() {
+export type DialogsDataType = {
+    id: number
+    name: string
+}
+export type MessagesDataType = {
+    id: number
+    messages: string
+}
+export type PostsDataType = {
+    id: number
+    message: string
+    likesCount: number
+}
+type AppPropsType = {
+    dialogsData: Array<DialogsDataType>
+    messagesData: Array<MessagesDataType>
+    postsData: Array<PostsDataType>
+}
+function App(props: AppPropsType) {
     return (
         <BrowserRouter>
             <div className="App">
                 <Header/>
                 <Navbar/>
                 <div className="content">
-                    <Route path="/profile" component={Profile}/>
-                    <Route path="/dialogs" component={Dialogs}/>
-                    <Route path="/news" component={News}/>
-                    <Route path="/music" component={Music}/>
-                    <Route path="/settings" component={Settings}/>
+                    <Route path="/profile" render={() => <Profile postsData={props.postsData}/>}/>
+                    <Route path="/dialogs" render={() => <Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/>}/>
+                    <Route path="/news" render={() => <News/>}/>
+                    <Route path="/music" render={() => <Music/>}/>
+                    <Route path="/settings" render={() => <Settings/>}/>
                 </div>
                 <Footer/>
             </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Post.module.css";
+import s from "./Posts.module.css";
 
 type PostType = {
     message: string

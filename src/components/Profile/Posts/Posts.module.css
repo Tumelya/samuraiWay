@@ -1,6 +1,17 @@
 /*Posts styles*/
 .posts {
 }
+h3 {
+    color: #09A76D;
+}
+
+textarea {
+    border: 2px solid rgb(226, 226, 226);
+    border-radius: 5px;
+}
+textarea:hover {
+    border: 2px solid #22B37F;
+}
 
 /*Post styles*/
 .item {

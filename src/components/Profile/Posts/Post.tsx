@@ -5,7 +5,7 @@ type PostType = {
     message: string
     likesCount: number
 }
-export const Post = (props: PostType) => {
+export const Post: React.FC<PostType> = (props) => {
     return (
         <div className={s.item}>
             <img className={s.avatar} src="https://cdn-icons-png.flaticon.com/512/1016/1016736.png" alt="avatar"/>

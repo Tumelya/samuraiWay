@@ -8,7 +8,7 @@ type DialogsPropsType = {
     dialogsData: Array<DialogsDataType>
     messagesData: Array<MessagesDataType>
 }
-export const Dialogs = (props: DialogsPropsType) => {
+export const Dialogs: React.FC<DialogsPropsType> = (props) => {
 
     return (
         <div className={s.dialogs}>

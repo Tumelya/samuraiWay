@@ -8,7 +8,7 @@ type DialogItemPropsType = {
     name: string
 }
 
-export const DialogItem = (props: DialogItemPropsType) => {
+export const DialogItem: React.FC<DialogItemPropsType> = (props) => {
     return (
         <div className={s.dialog}>
             <img className={s.ava} src={props.ava} alt=""/>

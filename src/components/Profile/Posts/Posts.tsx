@@ -8,7 +8,7 @@ type PostsPropsType = {
     postsData: Array<PostsDataType>
 }
 
-export const Posts = (props: PostsPropsType) => {
+export const Posts: React.FC<PostsPropsType> = (props) => {
 
     return (
         <div>

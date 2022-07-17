@@ -7,7 +7,7 @@ import {PostsDataType} from "../../App";
 export type ProfilePropsType = {
     postsData: Array<PostsDataType>
 }
-export const Profile = (props: ProfilePropsType) => {
+export const Profile: React.FC<ProfilePropsType> = (props) => {
     return (
         <main className={s.content}>
             <ProfileInfo/>

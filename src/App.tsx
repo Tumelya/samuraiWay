@@ -37,7 +37,7 @@ export type DataType = {
     friends: Array<FriendsType>
 }
 type AppPropsType = {
-    state: any/*<DataType>*/
+    state: any/*Array<DataType>*/
 }
 function App(props: AppPropsType) {
     return (

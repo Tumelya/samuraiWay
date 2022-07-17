@@ -10,7 +10,7 @@ export type FriendType = {
 type FriendsPropsType = {
     friends: Array<FriendType>
 }
-export const Friends = (props: FriendsPropsType) => {
+export const Friends: React.FC<FriendsPropsType> = (props) => {
 
     return (
         <div className={s.friends}>

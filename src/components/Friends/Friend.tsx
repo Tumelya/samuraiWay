@@ -3,7 +3,7 @@ import s from "./Friends.module.css";
 import {FriendType} from "./Friends";
 import {NavLink} from "react-router-dom";
 
-export const Friend = (props: FriendType) => {
+export const Friend: React.FC<FriendType> = (props) => {
 
     return (
         <div className={s.friend}>

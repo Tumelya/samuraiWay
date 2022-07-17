@@ -12,11 +12,13 @@ import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
 export type DialogsDataType = {
     id: number
+    ava: string
     name: string
 }
 export type MessagesDataType = {
     id: number
     messages: string
+    time: string
 }
 export type PostsDataType = {
     id: number

@@ -1,12 +1,28 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 2fr 6fr;
 }
 
 .dialogsItem, .messages {
     padding: 10px;
 }
 
-.message {
+.messages {
+background-color: antiquewhite;
+}
 
+.dialog {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ava {
+    width: 35px;
+    height: 35px;
+    border-radius: 15px;
+    box-shadow: 0 0 0 1px rgb(226, 226, 226), 0 0 2px #333;
+    margin: 10px 5px 5px 0px;
+}
+.name {
+    margin-top: 12px;
 }

@@ -16,7 +16,7 @@ export const ProfileInfo = () => {
                          src="https://cdn-icons-png.flaticon.com/512/7931/7931647.png"
                          alt=""/>
                 </div>
-                <div className={s.description}>Description here</div>
+                <h4 className={s.description}>Description here</h4>
             </div>
         </>
     )

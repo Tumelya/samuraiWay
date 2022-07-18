@@ -15,7 +15,7 @@ export const Posts: React.FC<ProfilePropsType> = (props) => {
 
     return (
         <div>
-            <h3>My Posts</h3>
+            <h4>My Posts</h4>
             <div>
                 <div><textarea ref={newPostElement} name="" id="" placeholder="New Post"></textarea></div>
                 <Button onClick={addPost} title="Add post"/>

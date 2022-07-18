@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 export type DialogsDataType = {
     id: number
     ava: string
@@ -129,4 +131,5 @@ export let addPost = (postMessage: string) => {
         likesCount: 0
     }
     state.postsData.push(newPost);
+    rerenderEntireTree();
 }

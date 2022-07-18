@@ -6,6 +6,7 @@
 
 .avaDescBlock {
     grid-area: avaDesc;
+    margin-top: 10px;
     display: grid;
     grid-template-areas: "ava description";
     grid-template-columns: 170px 1fr;
@@ -22,5 +23,6 @@
 .description {
     grid-area: description;
     color: #22B37F;
+    margin-top: 0px;
 }
 

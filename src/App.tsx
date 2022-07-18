@@ -10,24 +10,27 @@ import {Dialogs} from "./components/Dialogs/Dialogs";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
-import {state} from "./redux/state";
+import {addPost} from './redux/state'
+import {state} from './redux/state'
 import {Friends} from "./components/Friends/Friends";
 
-function App() {
+const App = () => {
     return (
-            <div className="App">
-                <Header/>
-                <Navbar friends={state.friends}/>
-                <div className="content">
-                    <Route path="/profile" render={() => <Profile postsData={state.postsData}/>}/>
-                    <Route path="/dialogs" render={() => <Dialogs dialogsData={state.dialogsData} messagesData={state.messagesData}/>}/>
-                    <Route path="/news" render={() => <News/>}/>
-                    <Route path="/music" render={() => <Music/>}/>
-                    <Route path="/settings" render={() => <Settings/>}/>
-                    <Route path="/friends" render={() => <Friends friends={state.friends}/>}/>
-                </div>
-                <Footer/>
+        <div className="App">
+            <Header/>
+            <Navbar friends={state.friends}/>
+            <div className="content">
+                <Route path="/profile" render={() => <Profile postsData={state.postsData}
+                                                              addPost={addPost}/>}/>
+                <Route path="/dialogs" render={() => <Dialogs dialogsData={state.dialogsData}
+                                                              messagesData={state.messagesData}/>}/>
+                <Route path="/news" render={() => <News/>}/>
+                <Route path="/music" render={() => <Music/>}/>
+                <Route path="/settings" render={() => <Settings/>}/>
+                <Route path="/friends" render={() => <Friends friends={state.friends}/>}/>
             </div>
+            <Footer/>
+        </div>
     )
 }
 

@@ -18,6 +18,11 @@ export type FriendsType = {
     ava: string
     name: string
 }
+
+export type ProfilePropsType = {
+    postsData: Array<PostsDataType>
+    addPost: (postMessage: string)=>void
+}
 export type RootStateType = {
     dialogsData: Array<DialogsDataType>
     messagesData: Array<MessagesDataType>
@@ -115,4 +120,13 @@ export let state: RootStateType = {
             name: "Melissa"
         }
     ]
+}
+
+export let addPost = (postMessage: string) => {
+    let newPost: PostsDataType = {
+        id: 11,
+        message: postMessage,
+        likesCount: 0
+    }
+    state.postsData.push(newPost);
 }

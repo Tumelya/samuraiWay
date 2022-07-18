@@ -1,20 +1,16 @@
 import React from 'react';
 import s from './Posts.module.css';
 import {Post} from "./Post";
-
 import {Button} from "../../Button/Button";
-import {PostsDataType} from "../../../redux/state";
+import {ProfilePropsType} from "../../../redux/state";
 
-type PostsPropsType = {
-    postsData: Array<PostsDataType>
-}
-
-export const Posts: React.FC<PostsPropsType> = (props) => {
+export const Posts: React.FC<ProfilePropsType> = (props) => {
 
     let newPostElement = React.createRef<HTMLTextAreaElement>();
     let addPost = () => {
-        let text = newPostElement.current?.value;
-        alert(text);
+        if (newPostElement.current){
+            props.addPost(newPostElement.current.value);
+        }
     }
 
     return (

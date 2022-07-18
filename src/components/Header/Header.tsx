@@ -11,6 +11,7 @@ export const Header = () => {
                  alt="icon" title="icon"/>
             <img className={s.theme}
                  src="https://cdn-icons.flaticon.com/png/512/2388/premium/2388013.png?token=exp=1658126737~hmac=577c683ad17f50d76818a5232d0c5529"
+                 //src="file:///D:/js/samuraiWay/public/moon.png"
                  alt="theme"/>
         </header>
     )

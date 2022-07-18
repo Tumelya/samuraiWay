@@ -3,7 +3,7 @@ import s from "./Button.module.css";
 
 type ButtonPropsType = {
     title: string
-    onClick: ()=>void
+    onClick?: ()=>void
 }
 export const Button: React.FC<ButtonPropsType> = (props) => {
 

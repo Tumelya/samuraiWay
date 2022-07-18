@@ -10,6 +10,12 @@ export const Posts: React.FC<ProfilePropsType> = (props) => {
     let addPost = () => {
         if (newPostElement.current){
             props.addPost(newPostElement.current.value);
+            newPostElement.current.value = "";
+        }
+    }
+    let textRemove = () => {
+        if (newPostElement.current){
+            newPostElement.current.value = "";
         }
     }
 
@@ -19,7 +25,7 @@ export const Posts: React.FC<ProfilePropsType> = (props) => {
             <div>
                 <div><textarea ref={newPostElement} name="" id="" placeholder="New Post"></textarea></div>
                 <Button onClick={addPost} title="Add post"/>
-                <Button onClick={addPost} title="Remove"/>
+                <Button onClick={textRemove} title="Clean"/>
             </div>
             <div className={s.posts}>
                 {props.postsData.map(el => <Post message={el.message} likesCount={el.likesCount}/>)}

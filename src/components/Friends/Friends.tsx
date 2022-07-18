@@ -13,8 +13,11 @@ type FriendsPropsType = {
 export const Friends: React.FC<FriendsPropsType> = (props) => {
 
     return (
-        <div className={s.friends}>
-            {props.friends.map(el => <Friend ava={el.ava} name={el.name}/>)}
+        <div>
+            <div className={s.headerLine}>Friends</div>
+            <div className={s.friends}>
+                {props.friends.map(el => <Friend ava={el.ava} name={el.name}/>)}
+            </div>
         </div>
     )
 }

@@ -2,9 +2,23 @@
 margin-top: 20px;
 }*/
 
+.headerLine {
+    background-color: antiquewhite;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 .friend {
     display: flex;
-    justify-content: flex-start;
+    margin: 5px 10px;
+}
+
+.friends {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 2px solid #f5fff7;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 .ava {
@@ -14,6 +28,7 @@ margin-top: 20px;
     box-shadow: 0 0 0 1px rgb(226, 226, 226), 0 0 2px #333;
     margin: 10px 5px 5px 0px;
 }
+
 .name {
     margin-top: 12px;
 }
@@ -22,8 +37,8 @@ margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    border: none;
 }
+
 .avaSideFriend {
     width: 35px;
     height: 35px;

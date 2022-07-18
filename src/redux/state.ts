@@ -131,5 +131,5 @@ export let addPost = (postMessage: string) => {
         likesCount: 0
     }
     state.postsData.push(newPost);
-    rerenderEntireTree();
+    rerenderEntireTree(state);
 }

@@ -14,8 +14,16 @@ export const Dialogs: React.FC<DialogsPropsType> = (props) => {
 
     let newMessageElement = React.createRef<HTMLTextAreaElement>();
     let addMessage = () => {
-        let text = newMessageElement.current?.value;
-        alert(text);
+        if (newMessageElement.current) {
+            alert(newMessageElement.current?.value);
+            newMessageElement.current.value = "";
+        }
+    }
+
+    let textRemove = () => {
+        if (newMessageElement.current) {
+            newMessageElement.current.value = "";
+        }
     }
 
     return (
@@ -31,7 +39,7 @@ export const Dialogs: React.FC<DialogsPropsType> = (props) => {
                     <div className={s.textarea}><textarea ref={newMessageElement} name="" id=""
                                                           placeholder="Message"></textarea></div>
                     <div className={s.button}><Button onClick={addMessage} title="Send"/></div>
-                    <div className={s.button}><Button onClick={addMessage} title="Clean"/></div>
+                    <div className={s.button}><Button onClick={textRemove} title="Clean"/></div>
                 </div>
             </div>
         </div>

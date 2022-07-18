@@ -11,7 +11,10 @@ export const ProfileInfo = () => {
                  alt=""/>
             <div className={s.avaDescBlock}>
                 <div>
-                    <img className={s.avatar} src="https://cdn-icons-png.flaticon.com/512/1016/1016736.png" alt=""/>
+                    <img className={s.avatar}
+                        //src="https://cdn-icons-png.flaticon.com/512/1016/1016736.png"
+                         src="https://cdn-icons-png.flaticon.com/512/7931/7931647.png"
+                         alt=""/>
                 </div>
                 <div className={s.description}>Description here</div>
             </div>

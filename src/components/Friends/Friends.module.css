@@ -22,4 +22,12 @@ margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
+    border: none;
+}
+.avaSideFriend {
+    width: 35px;
+    height: 35px;
+    /*border-radius: 15px;
+    box-shadow: 0 0 0 1px rgb(226, 226, 226), 0 0 2px #333;*/
+    margin: 10px 5px 5px 0px;
 }

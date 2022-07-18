@@ -3,7 +3,13 @@
     width: 50px;
     height: 50px;
     margin-left: 10px;
+    margin-top: 3px;
+}
 
+.theme {
+    width: 30px;
+    height: 30px;
+    margin: 10px 15px 10px 10px;
 }
 
 .headBar {
@@ -11,5 +17,5 @@
     background-color: rgb(226, 226, 226);
     border-radius: 0px 0px 5px 5px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
 }

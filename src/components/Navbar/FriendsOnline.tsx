@@ -13,7 +13,7 @@ export const FriendsOnline: React.FC<FriendsPropsType> = (props) => {
 
     return (
         <div className={s.sideFriends}>
-            {props.friends.map(el => <img className={s.ava} src={el.ava} title={el.name} alt={el.name}></img>)}
+            {props.friends.map(el => <img className={s.avaSideFriend} src={el.ava} title={el.name} alt={el.name}></img>)}
         </div>
     )
 }

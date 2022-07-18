@@ -1,6 +1,7 @@
 .cover {
     grid-area: cover;
     border-radius: 5px;
+    width: 100%;
 }
 
 .avaDescBlock {
@@ -14,8 +15,8 @@
     grid-area: ava;
     width: 150px;
     height: 150px;
-    border-radius: 5px;
-    box-shadow: 0 0 0 1px rgb(226, 226, 226), 0 0 3px #333;
+    /*border-radius: 5px;
+    box-shadow: 0 0 0 1px #f5fff7, 0 0 3px #333;*/
 }
 
 .description {

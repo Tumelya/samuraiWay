@@ -7,18 +7,19 @@ type MessagePropsType = {
 }
 
 export const Message: React.FC<MessagePropsType> = (props) => {
+
     return (
         /*<div className={s.message}>{props.message}</div>*/
-        <div className={s.common}>
-            <div className={s.triangle}></div>
-            <div className={s.messageForm}>
-                <div className={s.left}>
-                    <p className={s.mess}>{props.message}</p>
-                </div>
-                <div className={s.right}>
-                    <p className={s.time}>{props.time}</p>
+            <div className={s.common}>
+                <div className={s.triangle}></div>
+                <div className={s.messageForm}>
+                    <div className={s.left}>
+                        <p className={s.mess}>{props.message}</p>
+                    </div>
+                    <div className={s.right}>
+                        <p className={s.time}>{props.time}</p>
+                    </div>
                 </div>
             </div>
-        </div>
     )
 }

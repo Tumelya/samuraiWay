@@ -103,6 +103,16 @@ export let state: RootStateType = {
             id: 8,
             ava: "https://cdn-icons-png.flaticon.com/512/3667/3667290.png",
             name: "Murphy"
+        },
+        {
+            id: 9,
+            ava: "https://cdn-icons-png.flaticon.com/512/7206/7206468.png",
+            name: "Margo"
+        },
+        {
+            id: 10,
+            ava: "https://cdn-icons-png.flaticon.com/512/7774/7774710.png",
+            name: "Melissa"
         }
     ]
 }

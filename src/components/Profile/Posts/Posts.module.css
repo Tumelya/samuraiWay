@@ -3,11 +3,13 @@
 }
 h3 {
     color: #09A76D;
+    margin: 20px 10px 10px 10px;
 }
 
 textarea {
     border: 2px solid rgb(226, 226, 226);
     border-radius: 5px;
+    margin: 5px;
 }
 textarea:hover {
     border: 2px solid #22B37F;
@@ -28,7 +30,7 @@ textarea:hover {
     width: 50px;
     height: 50px;
     border-radius: 50px;
-    box-shadow: 0 0 0 1px rgb(226, 226, 226), 0 0 3px #333;
+    box-shadow: 0 0 0 1px #f5fff7, 0 0 2px #333;
     margin: 10px;
 }
 
@@ -38,4 +40,5 @@ textarea:hover {
 
 .likes {
     grid-area: likes;
+    color: #22B37F;
 }

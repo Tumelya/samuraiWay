@@ -27,3 +27,7 @@
 .name {
     margin-top: 12px;
 }
+
+.texButt {
+    display: flex;
+}

@@ -23,6 +23,15 @@ export type ProfilePageType = {
     newPostText: string
 }
 
+export type StoreType = {
+    _state: RootStateType,
+    getState: () => RootStateType,
+    rerenderEntireTree: () => void,
+    addPost: () => void,
+    updateNewPostText: (newText: string) => void,
+    subscribe: (observer: () => void) => void
+}
+
 export type RootStateType = {
     dialogsData: Array<DialogsDataType>
     messagesData: Array<MessagesDataType>
@@ -30,7 +39,7 @@ export type RootStateType = {
     friends: Array<FriendsType>
 }
 
-export let store = {
+export let store: StoreType = {
     _state: {
         dialogsData: [
             {
@@ -66,10 +75,10 @@ export let store = {
         profilePage: {
             newPostText: "",
             postsData: [
-                {id: 1, message: "Hi!", likesCount: 33},
-                {id: 2, message: "How are you?", likesCount: 57},
-                {id: 3, message: "Have a good day!!", likesCount: 6},
-                {id: 4, message: "See you!", likesCount: 28}
+                {id: 1, message: "Hi! Hello! Have a good day!!", likesCount: 33},
+                {id: 2, message: "I started learning how to play the piano today! I'm so happy! My dreams come true!", likesCount: 57},
+                {id: 3, message: "I'm a creative person! Tell u where I'm looking for inspiration?", likesCount: 6},
+                {id: 4, message: "My life is awesome!!!", likesCount: 28}
             ]
         },
         friends: [
@@ -128,24 +137,24 @@ export let store = {
     getState() {
         return this._state;
     },
-    rerenderEntireTree(state: RootStateType) {
+    rerenderEntireTree() {
         console.log("");
     },
     addPost() {
         let newPost: PostsDataType = {
             id: 11,
-            message: this.getState().profilePage.newPostText,
+            message: this._state.profilePage.newPostText,
             likesCount: 0
         }
-        this.getState().profilePage.postsData.push(newPost);
-        store.rerenderEntireTree(this.getState());
+        this._state.profilePage.postsData.push(newPost);
+        this.rerenderEntireTree();
     },
-    updateNewPostText (newText: string) {
-        this.getState().profilePage.newPostText = newText;
-        store.rerenderEntireTree(this.getState());
+    updateNewPostText(newText) {
+        this._state.profilePage.newPostText = newText;
+        this.rerenderEntireTree();
     },
-    subscribe (observer: () => void) {
-        store.rerenderEntireTree = observer;
+    subscribe(observer) {
+        this.rerenderEntireTree = observer;
     }
 }
 

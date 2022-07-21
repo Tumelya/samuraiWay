@@ -8,7 +8,7 @@ import App from "./App";
 export const rerenderEntireTree = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <App />
+            <App store={store}/>
         </BrowserRouter>,
         document.getElementById('root')
     );

@@ -20,15 +20,15 @@ export type FriendsType = {
     ava: string
     name: string
 }
-
-export type ProfilePropsType = {
+export type ProfilePageType = {
     postsData: Array<PostsDataType>
-    addPost: (postMessage: string)=>void
+    newPostText: string
 }
+
 export type RootStateType = {
     dialogsData: Array<DialogsDataType>
     messagesData: Array<MessagesDataType>
-    postsData: Array<PostsDataType>
+    profilePage: ProfilePageType
     friends: Array<FriendsType>
 }
 
@@ -64,12 +64,15 @@ export let state: RootStateType = {
         {id: 1, messages: "hi", time: "10:00"}, {id: 2, messages: "what's up", time: "10:01"},
         {id: 3, messages: "yo", time: "10:02"}, {id: 4, messages: "nice look", time: "10:03"}
     ],
-    postsData: [
-        {id: 1, message: "Hi!", likesCount: 33},
-        {id: 2, message: "How are you?", likesCount: 57},
-        {id: 3, message: "Hi!", likesCount: 6},
-        {id: 4, message: "Hi!", likesCount: 28}
-    ],
+    profilePage: {
+        newPostText: "",
+        postsData: [
+            {id: 1, message: "Hi!", likesCount: 33},
+            {id: 2, message: "How are you?", likesCount: 57},
+            {id: 3, message: "Have a good day!!", likesCount: 6},
+            {id: 4, message: "See you!", likesCount: 28}
+        ]
+    },
     friends: [
         {
             id: 1,
@@ -130,6 +133,11 @@ export let addPost = (postMessage: string) => {
         message: postMessage,
         likesCount: 0
     }
-    state.postsData.push(newPost);
+    state.profilePage.postsData.push(newPost);
+    rerenderEntireTree(state);
+}
+
+export let updateNewPostText = (newText: string) => {
+    state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }

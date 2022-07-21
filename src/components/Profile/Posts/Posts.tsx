@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import s from './Posts.module.css';
 import {Post} from "./Post";
 import {Button} from "../../Button/Button";
-import {ProfilePropsType} from "../../../redux/state";
+import {PostsDataType} from "../../../redux/state"
+
+type ProfilePropsType = {
+    postsData: Array<PostsDataType>
+    newPostText: string
+    addPost: (postMessage: string) => void
+    updateNewPostText: (newText: string)=>void
+
+}
 
 export const Posts: React.FC<ProfilePropsType> = (props) => {
 
@@ -19,16 +27,20 @@ export const Posts: React.FC<ProfilePropsType> = (props) => {
         }
     }
 
+    const onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        props.updateNewPostText(e.currentTarget.value)
+    }
+
     return (
         <div>
             <h4>My Posts</h4>
             <div>
-                <div><textarea ref={newPostElement} name="" id="" placeholder="New Post"></textarea></div>
+                <div><textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} placeholder="New Post"></textarea></div>
                 <Button onClick={addPost} title="Add post"/>
                 <Button onClick={textRemove} title="Clean"/>
             </div>
             <div className={s.posts}>
-                {props.postsData.map(el => <Post message={el.message} likesCount={el.likesCount}/>)}
+                {props.postsData.map(el => <Post message={el.message} likesCount={el.likesCount} key = {el.id}/>)}
             </div>
         </div>
     )

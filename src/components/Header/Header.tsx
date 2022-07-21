@@ -1,17 +1,15 @@
 import React from 'react';
 import s from './Header.module.css'
-
+import theme from '../../assets/images/moon.png'
 export const Header = () => {
     return (
         <header className={s.headBar}>
             <img className={s.logo}
                  src="https://cdn-icons-png.flaticon.com/512/4379/4379396.png"
-                //src="https://cdn-icons.flaticon.com/png/512/3864/premium/3864096.png?token=exp=1657190181~hmac=ae3e2200cdf19c95a73a0dc25055fc8b"
-                //src="https://cdn-icons.flaticon.com/png/512/3750/premium/3750987.png?token=exp=1657206705~hmac=5e20cd7e1a9d62fd7c417eb12cf630cd"
                  alt="icon" title="icon"/>
             <img className={s.theme}
-                 src="https://cdn-icons.flaticon.com/png/512/2388/premium/2388013.png?token=exp=1658126737~hmac=577c683ad17f50d76818a5232d0c5529"
-                 //src="file:///D:/js/samuraiWay/public/moon.png"
+
+                 src={theme}
                  alt="theme"/>
         </header>
     )

@@ -10,7 +10,7 @@ import {Dialogs} from "./components/Dialogs/Dialogs";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
-import {addPost} from './redux/state'
+import {addPost, updateNewPostText} from './redux/state'
 import {state} from './redux/state'
 import {Friends} from "./components/Friends/Friends";
 
@@ -20,8 +20,10 @@ const App = () => {
             <Header/>
             <Navbar friends={state.friends}/>
             <div className="content">
-                <Route path="/profile" render={() => <Profile postsData={state.postsData}
-                                                              addPost={addPost}/>}/>
+                <Route path="/profile" render={() => <Profile postsData={state.profilePage.postsData}
+                                                              addPost={addPost}
+                                                              updateNewPostText={updateNewPostText}
+                                                              newPostText={state.profilePage.newPostText}/>}/>
                 <Route path="/dialogs" render={() => <Dialogs dialogsData={state.dialogsData}
                                                               messagesData={state.messagesData}/>}/>
                 <Route path="/news" render={() => <News/>}/>

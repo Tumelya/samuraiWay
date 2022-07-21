@@ -126,7 +126,7 @@ export let state: RootStateType = {
 }
 
 let rerenderEntireTree = (state: RootStateType) => {
-    alert("");
+    console.log("");
 }
 
 export const addPost = () => {
@@ -142,4 +142,8 @@ export const addPost = () => {
 export const updateNewPostText = (newText: string) => {
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
+}
+
+export const subscribe = (observer: () => void) => {
+ rerenderEntireTree = observer;
 }

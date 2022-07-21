@@ -1,11 +1,11 @@
 import React from 'react';
 import './index.css';
-import {RootStateType, state} from "./redux/state";
+import {subscribe} from "./redux/state";
 import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
 import App from "./App";
 
-export const rerenderEntireTree = (state: RootStateType) => {
+export const rerenderEntireTree = () => {
     ReactDOM.render(
         <BrowserRouter>
             <App />
@@ -13,5 +13,5 @@ export const rerenderEntireTree = (state: RootStateType) => {
         document.getElementById('root')
     );
 }
-
-rerenderEntireTree(state);
+rerenderEntireTree();
+subscribe(rerenderEntireTree);

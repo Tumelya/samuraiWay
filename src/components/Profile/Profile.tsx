@@ -7,7 +7,7 @@ import {PostsDataType} from "../../redux/state";
 type ProfilePropsType = {
     postsData: Array<PostsDataType>
     newPostText: string
-    addPost: (postMessage: string) => void
+    addPost: () => void
     updateNewPostText: (newText: string)=>void
 
 }

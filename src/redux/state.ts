@@ -76,7 +76,7 @@ export let state: RootStateType = {
     friends: [
         {
             id: 1,
-            ava: "https://cdn-icons.flaticon.com/png/512/3404/premium/3404417.png?token=exp=1658063498~hmac=9004bed658a475d3b3e181553818eee6",
+            ava: "https://cdn-icons-png.flaticon.com/512/4509/4509624.png",
             name: "Maksim"
         },
         {
@@ -127,10 +127,10 @@ export let state: RootStateType = {
     ]
 }
 
-export let addPost = (postMessage: string) => {
+export let addPost = () => {
     let newPost: PostsDataType = {
         id: 11,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0
     }
     state.profilePage.postsData.push(newPost);

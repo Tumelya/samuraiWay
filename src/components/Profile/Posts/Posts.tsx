@@ -7,7 +7,7 @@ import {PostsDataType} from "../../../redux/state"
 type ProfilePropsType = {
     postsData: Array<PostsDataType>
     newPostText: string
-    addPost: (postMessage: string) => void
+    addPost: () => void
     updateNewPostText: (newText: string)=>void
 
 }
@@ -15,20 +15,21 @@ type ProfilePropsType = {
 export const Posts: React.FC<ProfilePropsType> = (props) => {
 
     let newPostElement = React.createRef<HTMLTextAreaElement>();
+
     let addPost = () => {
         if (newPostElement.current){
-            props.addPost(newPostElement.current.value);
-            newPostElement.current.value = "";
+            props.addPost();
+            props.updateNewPostText("");
         }
     }
     let textRemove = () => {
         if (newPostElement.current){
-            newPostElement.current.value = "";
+            props.updateNewPostText("");
         }
     }
 
     const onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        props.updateNewPostText(e.currentTarget.value)
+        props.updateNewPostText(e.currentTarget.value);
     }
 
     return (

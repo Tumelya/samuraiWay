@@ -41,7 +41,7 @@ export const Posts: React.FC<ProfilePropsType> = (props) => {
                 <Button onClick={textRemove} title="Clean"/>
             </div>
             <div className={s.posts}>
-                {props.postsData.map(el => <Post message={el.message} likesCount={el.likesCount} key = {el.id}/>)}
+                {props.postsData.map(el => <Post message={el.message} likesCount={el.likesCount} key = {el._id}/>)}
             </div>
         </div>
     )

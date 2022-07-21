@@ -1,3 +1,5 @@
+import {v1} from "uuid";
+
 export type DialogsDataType = {
     id: number
     ava: string
@@ -9,7 +11,7 @@ export type MessagesDataType = {
     time: string
 }
 export type PostsDataType = {
-    id: number
+    id: string
     message: string
     likesCount: number
 }
@@ -75,10 +77,10 @@ export let store: StoreType = {
         profilePage: {
             newPostText: "",
             postsData: [
-                {id: 1, message: "Hi! Hello! Have a good day!!", likesCount: 33},
-                {id: 2, message: "I started learning how to play the piano today! I'm so happy! My dreams come true!", likesCount: 57},
-                {id: 3, message: "I'm a creative person! Tell u where I'm looking for inspiration?", likesCount: 6},
-                {id: 4, message: "My life is awesome!!!", likesCount: 28}
+                {id: v1(), message: "Hi! Hello! Have a good day!!", likesCount: 33},
+                {id: v1(), message: "I started learning how to play the piano today! I'm so happy! My dreams come true!", likesCount: 57},
+                {id: v1(), message: "I'm a creative person! Tell u where I'm looking for inspiration?", likesCount: 6},
+                {id: v1(), message: "My life is awesome!!!", likesCount: 28}
             ]
         },
         friends: [
@@ -142,7 +144,7 @@ export let store: StoreType = {
     },
     addPost() {
         let newPost: PostsDataType = {
-            id: 11,
+            id: v1(),
             message: this._state.profilePage.newPostText,
             likesCount: 0
         }

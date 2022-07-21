@@ -16,7 +16,7 @@ import {Friends} from "./components/Friends/Friends";
 type AppPropsType = {
     store: StoreType
 }
-const App: React.FC<AppPropsType> = (props) => {
+export const App: React.FC<AppPropsType> = (props) => {
 
     const state = props.store.getState();
     return (
@@ -24,12 +24,13 @@ const App: React.FC<AppPropsType> = (props) => {
             <Header/>
             <Navbar friends={state.friends}/>
             <div className="content">
-                <Route path="/profile" render={() => <Profile postsData={state.profilePage.postsData}
-                                                              addPost={props.store.addPost.bind(props.store)}
-                                                              updateNewPostText={props.store.updateNewPostText.bind(props.store)}
-                                                              newPostText={state.profilePage.newPostText}/>}/>
-                <Route path="/dialogs" render={() => <Dialogs dialogsData={state.dialogsData}
-                                                              messagesData={state.messagesData}/>}/>
+                <Route path="/profile"
+                       render={() => <Profile postsData={state.profilePage.postsData}
+                                              dispatch={props.store.dispatch.bind(props.store)}
+                                              newPostText={state.profilePage.newPostText}/>}/>
+                <Route path="/dialogs"
+                       render={() => <Dialogs dialogsData={state.dialogsData}
+                                              messagesData={state.messagesData}/>}/>
                 <Route path="/news" render={() => <News/>}/>
                 <Route path="/music" render={() => <Music/>}/>
                 <Route path="/settings" render={() => <Settings/>}/>
@@ -39,5 +40,3 @@ const App: React.FC<AppPropsType> = (props) => {
         </div>
     )
 }
-
-export default App;

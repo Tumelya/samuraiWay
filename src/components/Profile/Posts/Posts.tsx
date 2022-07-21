@@ -2,46 +2,45 @@ import React, {ChangeEvent} from 'react';
 import s from './Posts.module.css';
 import {Post} from "./Post";
 import {Button} from "../../Button/Button";
-import {PostsDataType} from "../../../redux/state"
+import {ActionsTypes, PostsDataType} from "../../../redux/state"
 
-type ProfilePropsType = {
+type PostsPropsType = {
     postsData: Array<PostsDataType>
     newPostText: string
-    addPost: () => void
-    updateNewPostText: (newText: string)=>void
-
+    dispatch: (action: ActionsTypes) => void
 }
 
-export const Posts: React.FC<ProfilePropsType> = (props) => {
+export const Posts: React.FC<PostsPropsType> = (props) => {
 
     let newPostElement = React.createRef<HTMLTextAreaElement>();
 
     let addPost = () => {
-        if (newPostElement.current){
-            props.addPost();
-            props.updateNewPostText("");
+        if (newPostElement.current) {
+            props.dispatch({type: "ADD-POST"});
+            props.dispatch({type: "UPDATE-NEW-POST-TEXT", newText: ""});
         }
     }
     let textRemove = () => {
-        if (newPostElement.current){
-            props.updateNewPostText("");
+        if (newPostElement.current) {
+            props.dispatch({type: "UPDATE-NEW-POST-TEXT", newText: ""});
         }
     }
 
     const onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        props.updateNewPostText(e.currentTarget.value);
+        props.dispatch({type: "UPDATE-NEW-POST-TEXT", newText: e.currentTarget.value});
     }
 
     return (
         <div>
             <h4>My Posts</h4>
             <div>
-                <div><textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} placeholder="New Post"></textarea></div>
+                <div><textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}
+                               placeholder="New Post"></textarea></div>
                 <Button onClick={addPost} title="Add post"/>
                 <Button onClick={textRemove} title="Clean"/>
             </div>
             <div className={s.posts}>
-                {props.postsData.map(el => <Post message={el.message} likesCount={el.likesCount} key = {el._id}/>)}
+                {props.postsData.map(el => <Post message={el.message} likesCount={el.likesCount} key={el._id}/>)}
             </div>
         </div>
     )

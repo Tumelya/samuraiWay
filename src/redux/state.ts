@@ -1,5 +1,3 @@
-import {rerenderEntireTree} from "../render";
-
 export type DialogsDataType = {
     id: number
     ava: string
@@ -127,7 +125,11 @@ export let state: RootStateType = {
     ]
 }
 
-export let addPost = () => {
+let rerenderEntireTree = (state: RootStateType) => {
+    alert("");
+}
+
+export const addPost = () => {
     let newPost: PostsDataType = {
         id: 11,
         message: state.profilePage.newPostText,
@@ -137,7 +139,7 @@ export let addPost = () => {
     rerenderEntireTree(state);
 }
 
-export let updateNewPostText = (newText: string) => {
+export const updateNewPostText = (newText: string) => {
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }

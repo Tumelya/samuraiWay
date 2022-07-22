@@ -2,7 +2,7 @@ import React, {ChangeEvent} from 'react';
 import s from './Posts.module.css';
 import {Post} from "./Post";
 import {Button} from "../../Button/Button";
-import {ActionsTypes, PostsDataType} from "../../../redux/state"
+import {ActionsTypes, addPostActionCreator, PostsDataType, updateNewPostTextActionCreator} from "../../../redux/state"
 
 type PostsPropsType = {
     postsData: Array<PostsDataType>
@@ -16,8 +16,8 @@ export const Posts: React.FC<PostsPropsType> = (props) => {
 
     let addPost = () => {
         if (newPostElement.current) {
-            props.dispatch({type: "ADD-POST"});
-            props.dispatch({type: "UPDATE-NEW-POST-TEXT", newText: ""});
+            props.dispatch(addPostActionCreator());
+            props.dispatch(updateNewPostTextActionCreator(""));
         }
     }
     let textRemove = () => {
@@ -27,7 +27,7 @@ export const Posts: React.FC<PostsPropsType> = (props) => {
     }
 
     const onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        props.dispatch({type: "UPDATE-NEW-POST-TEXT", newText: e.currentTarget.value});
+        props.dispatch(updateNewPostTextActionCreator(e.currentTarget.value));
     }
 
     return (

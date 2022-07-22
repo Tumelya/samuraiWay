@@ -44,14 +44,16 @@ export type StoreType = {
 
 export type ActionsTypes = ReturnType<typeof addPostActionCreator> | ReturnType<typeof updateNewPostTextActionCreator>
 
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST_TEXT= "UPDATE-NEW-POST-TEXT";
 export const addPostActionCreator = () => {
     return {
-        type: "ADD-POST"
+        type: ADD_POST
     } as const
 }
 export const updateNewPostTextActionCreator = (newText: string) => {
     return {
-        type: "UPDATE-NEW-POST-TEXT",
+        type: UPDATE_NEW_POST_TEXT,
         newText: newText
     } as const
 }
@@ -178,9 +180,9 @@ export let store: StoreType = {
         this.rerenderEntireTree();
     },
     dispatch(action) {
-        if (action.type === "ADD-POST") {
+        if (action.type === ADD_POST) {
             this._addPost();
-        } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._updateNewPostText(action.newText);
         }
     }

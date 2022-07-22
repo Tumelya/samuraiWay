@@ -8,14 +8,14 @@
 .messageForm {
     /*width: 400px;
     height: 70px;*/
-    border-radius: 15px 15px 15px 0px;
+    border-radius: 15px 15px 0px 15px;
     background-color: rgb(226, 226, 226);
 }
 .triangle {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 0 10px 15px;
+    border-width: 0 15px 10px 0;
     border-color: transparent transparent rgb(226, 226, 226) transparent;
 }
 

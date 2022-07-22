@@ -9,9 +9,7 @@ type MessagePropsType = {
 export const Message: React.FC<MessagePropsType> = (props) => {
 
     return (
-        /*<div className={s.message}>{props.message}</div>*/
             <div className={s.common}>
-                <div className={s.triangle}></div>
                 <div className={s.messageForm}>
                     <div className={s.left}>
                         <p className={s.mess}>{props.message}</p>
@@ -20,6 +18,7 @@ export const Message: React.FC<MessagePropsType> = (props) => {
                         <p className={s.time}>{props.time}</p>
                     </div>
                 </div>
+                <div className={s.triangle}></div>
             </div>
     )
 }

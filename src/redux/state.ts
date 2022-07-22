@@ -211,7 +211,7 @@ export let store: StoreType = {
         } else if (action.type === ADD_MESSAGE) {
             let body = this._state.dialogsPage.newMessageBody;
             this._state.dialogsPage.newMessageBody = "";
-            this._state.dialogsPage.messagesData.push({id: v1(), messages: body, time: "--:--"})
+            this._state.dialogsPage.messagesData.push({id: v1(), messages: body, time: "00:00"})
             this.rerenderEntireTree();
         } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
             this._state.dialogsPage.newMessageBody = action.body;

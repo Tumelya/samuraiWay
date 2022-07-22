@@ -19,7 +19,7 @@ type DialogsPropsType = {
     dispatch: (action: ActionsTypes) => void
 }
 export const Dialogs: React.FC<DialogsPropsType> = (props) => {
-    
+
     const onSendMessageClick = () => {
         props.dispatch(addMessageActionCreator());
     }

@@ -29,6 +29,7 @@ export const Dialogs: React.FC<DialogsPropsType> = (props) => {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItem}>
+                <div className={s.headerLine}>Dialogs</div>
                 {props.dialogsData.map(el => <DialogItem ava={el.ava} name={el.name} id={el.id}/>)}
             </div>
             <div>

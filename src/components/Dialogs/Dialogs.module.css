@@ -3,13 +3,14 @@
     grid-template-columns: 2fr 6fr;
 }
 
-.dialogsItem, .messages {
-    padding: 10px;
+.dialogsItem {
+    padding-right: 10px;
 }
 
 .messages {
     border: 2px solid #f5fff7;
     border-radius: 5px;
+    padding: 5px;
 }
 
 .dialog {
@@ -30,4 +31,10 @@
 
 .texButt {
     display: flex;
+}
+
+.headerLine {
+    background-color: #fffddb;
+    border-radius: 5px;
+    padding: 10px;
 }

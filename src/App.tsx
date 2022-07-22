@@ -30,7 +30,9 @@ export const App: React.FC<AppPropsType> = (props) => {
                                               newPostText={state.profilePage.newPostText}/>}/>
                 <Route path="/dialogs"
                        render={() => <Dialogs dialogsData={state.dialogsPage.dialogsData}
-                                              messagesData={state.dialogsPage.messagesData}/>}/>
+                                              messagesData={state.dialogsPage.messagesData}
+                                              newMessageBody={state.dialogsPage.newMessageBody}
+                                              dispatch={props.store.dispatch.bind(props.store)}/>}/>
                 <Route path="/news" render={() => <News/>}/>
                 <Route path="/music" render={() => <Music/>}/>
                 <Route path="/settings" render={() => <Settings/>}/>

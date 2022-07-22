@@ -6,7 +6,7 @@ export type DialogsDataType = {
     name: string
 }
 export type MessagesDataType = {
-    id: number
+    id: string
     messages: string
     time: string
 }
@@ -27,6 +27,7 @@ export type ProfilePageType = {
 export type DialogsPageType = {
     dialogsData: Array<DialogsDataType>
     messagesData: Array<MessagesDataType>
+    newMessageBody: string
 }
 export type RootStateType = {
     dialogsPage: DialogsPageType
@@ -44,10 +45,16 @@ export type StoreType = {
     dispatch: (action: ActionsTypes) => void
 }
 
-export type ActionsTypes = ReturnType<typeof addPostActionCreator> | ReturnType<typeof updateNewPostTextActionCreator>
+export type ActionsTypes =
+    ReturnType<typeof addPostActionCreator>
+    | ReturnType<typeof updateNewPostTextActionCreator>
+    | ReturnType<typeof addMessageActionCreator>
+    | ReturnType<typeof updateNewMessageBodyActionCreator>
 
 const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT= "UPDATE-NEW-POST-TEXT";
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const ADD_MESSAGE = "ADD-MESSAGE";
+const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
 export const addPostActionCreator = () => {
     return {
         type: ADD_POST
@@ -59,6 +66,18 @@ export const updateNewPostTextActionCreator = (newText: string) => {
         newText: newText
     } as const
 }
+export const addMessageActionCreator = () => {
+    return {
+        type: ADD_MESSAGE
+    } as const
+}
+export const updateNewMessageBodyActionCreator = (body: string) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_BODY,
+        body: body
+    } as const
+}
+
 
 export let store: StoreType = {
     _state: {
@@ -91,41 +110,11 @@ export let store: StoreType = {
                 }
             ],
             messagesData: [
-                {id: 1, messages: "hi", time: "10:00"}, {id: 2, messages: "what's up", time: "10:01"},
-                {id: 3, messages: "yo", time: "10:02"}, {id: 4, messages: "nice look", time: "10:03"}
-            ]
+                {id: v1(), messages: "hi", time: "10:00"}, {id: v1(), messages: "what's up", time: "10:01"},
+                {id: v1(), messages: "yo", time: "10:02"}, {id: v1(), messages: "nice look", time: "10:03"}
+            ],
+            newMessageBody: ""
         },
-        /*dialogsData: [
-            {
-                id: 1,
-                ava: "https://cdn-icons.flaticon.com/png/512/3404/premium/3404417.png?token=exp=1658063498~hmac=9004bed658a475d3b3e181553818eee6",
-                name: "Maksim"
-            },
-            {
-                id: 2,
-                ava: "https://cdn-icons-png.flaticon.com/512/7665/7665682.png",
-                name: "Maria"
-            },
-            {
-                id: 3,
-                ava: "https://cdn-icons.flaticon.com/png/512/2423/premium/2423917.png?token=exp=1658062838~hmac=87d38e50bc4b82ec370b97ff5a53a723",
-                name: "Merve"
-            },
-            {
-                id: 4,
-                ava: "https://cdn-icons.flaticon.com/png/512/3667/premium/3667820.png?token=exp=1658064393~hmac=d9a03a2aff29f2937720ce1e088d34bc",
-                name: "Robb"
-            },
-            {
-                id: 5,
-                ava: "https://cdn-icons.flaticon.com/png/512/3136/premium/3136101.png?token=exp=1658062917~hmac=533467193df287053ba0140da248f0b0",
-                name: "Alex"
-            }
-        ],
-        messagesData: [
-            {id: 1, messages: "hi", time: "10:00"}, {id: 2, messages: "what's up", time: "10:01"},
-            {id: 3, messages: "yo", time: "10:02"}, {id: 4, messages: "nice look", time: "10:03"}
-        ],*/
         profilePage: {
             newPostText: "",
             postsData: [
@@ -219,6 +208,14 @@ export let store: StoreType = {
             this._addPost();
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._updateNewPostText(action.newText);
+        } else if (action.type === ADD_MESSAGE) {
+            let body = this._state.dialogsPage.newMessageBody;
+            this._state.dialogsPage.newMessageBody = "";
+            this._state.dialogsPage.messagesData.push({id: v1(), messages: body, time: "--:--"})
+            this.rerenderEntireTree();
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.body;
+            this.rerenderEntireTree();
         }
     }
 }

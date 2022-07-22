@@ -1,30 +1,33 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 import s from "./Dialogs.module.css";
 import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Message/Message";
-import {DialogsDataType, MessagesDataType} from "../../redux/state";
+import {
+    ActionsTypes,
+    addMessageActionCreator,
+    DialogsDataType,
+    MessagesDataType,
+    updateNewMessageBodyActionCreator
+} from "../../redux/state";
 import {Button} from "../Button/Button";
 
 
 type DialogsPropsType = {
     dialogsData: Array<DialogsDataType>
     messagesData: Array<MessagesDataType>
+    newMessageBody: string
+    dispatch: (action: ActionsTypes) => void
 }
 export const Dialogs: React.FC<DialogsPropsType> = (props) => {
-
-    let newMessageElement = React.createRef<HTMLTextAreaElement>();
-    let addMessage = () => {
-        if (newMessageElement.current) {
-            alert(newMessageElement.current?.value);
-            newMessageElement.current.value = "";
-        }
+    
+    const onSendMessageClick = () => {
+        props.dispatch(addMessageActionCreator());
     }
-
-    let textRemove = () => {
-        if (newMessageElement.current) {
-            newMessageElement.current.value = "";
-        }
+    const onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        let body = e.currentTarget.value;
+        props.dispatch(updateNewMessageBodyActionCreator(body));
     }
+    const onCleanMessageClick = () => {}
 
     return (
         <div className={s.dialogs}>
@@ -37,10 +40,14 @@ export const Dialogs: React.FC<DialogsPropsType> = (props) => {
                     {props.messagesData.map(el => <Message message={el.messages} time={el.time}/>)}
                 </div>
                 <div className={s.texButt}>
-                    <div className={s.textarea}><textarea ref={newMessageElement} name="" id=""
-                                                          placeholder="Message"></textarea></div>
-                    <div className={s.button}><Button onClick={addMessage} title="Send"/></div>
-                    <div className={s.button}><Button onClick={textRemove} title="Clean"/></div>
+                    <div className={s.textarea}>
+                        <textarea value={props.newMessageBody}
+                                  onChange={onNewMessageChange}
+                                  placeholder="Message...">
+                        </textarea>
+                    </div>
+                    <div className={s.button}><Button onClick={onSendMessageClick} title="Send"/></div>
+                    <div className={s.button}><Button onClick={onCleanMessageClick} title="Clean"/></div>
                 </div>
             </div>
         </div>

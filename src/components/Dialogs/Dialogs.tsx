@@ -30,6 +30,7 @@ export const Dialogs: React.FC<DialogsPropsType> = (props) => {
     const onCleanMessageClick = () => {
         props.dispatch(updateNewMessageBodyActionCreator(""));
     }
+    const cols = 47;
 
     return (
         <div className={s.dialogs}>
@@ -45,7 +46,8 @@ export const Dialogs: React.FC<DialogsPropsType> = (props) => {
                     <div className={s.textarea}>
                         <textarea value={props.newMessageBody}
                                   onChange={onNewMessageChange}
-                                  placeholder="Message...">
+                                  placeholder="Message..."
+                                  cols={cols}>
                         </textarea>
                     </div>
                     <div className={s.button}><Button onClick={onSendMessageClick} title="Send"/></div>

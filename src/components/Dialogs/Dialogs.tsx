@@ -27,7 +27,9 @@ export const Dialogs: React.FC<DialogsPropsType> = (props) => {
         let body = e.currentTarget.value;
         props.dispatch(updateNewMessageBodyActionCreator(body));
     }
-    const onCleanMessageClick = () => {}
+    const onCleanMessageClick = () => {
+        props.dispatch(updateNewMessageBodyActionCreator(""));
+    }
 
     return (
         <div className={s.dialogs}>

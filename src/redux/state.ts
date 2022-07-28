@@ -1,4 +1,6 @@
 import {v1} from "uuid";
+import {profileReducer} from "./profileReducer";
+import {dialogsReducer} from "./dialogsReducer";
 
 export type DialogsDataType = {
     id: number
@@ -204,7 +206,12 @@ export let store: StoreType = {
         this.rerenderEntireTree();
     },
     dispatch(action) {
-        if (action.type === ADD_POST) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+
+        this.rerenderEntireTree();
+
+        /*if (action.type === ADD_POST) {
             this._addPost();
         } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._updateNewPostText(action.newText);
@@ -216,6 +223,6 @@ export let store: StoreType = {
         } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
             this._state.dialogsPage.newMessageBody = action.body;
             this.rerenderEntireTree();
-        }
+        }*/
     }
 }

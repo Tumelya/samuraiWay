@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/samuraiWay/static/css/main.c276403b.css",
+    "main.js": "/samuraiWay/static/js/main.84c5b79b.js",
+    "static/media/moon.png": "/samuraiWay/static/media/moon.5d62800c277600bedf65.png",
+    "index.html": "/samuraiWay/index.html",
+    "main.c276403b.css.map": "/samuraiWay/static/css/main.c276403b.css.map",
+    "main.84c5b79b.js.map": "/samuraiWay/static/js/main.84c5b79b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c276403b.css",
+    "static/js/main.84c5b79b.js"
+  ]
+}

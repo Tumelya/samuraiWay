@@ -85,7 +85,7 @@ export let store: StoreType = {
             dialogsData: [
                 {
                     id: 1,
-                    ava: "https://cdn-icons.flaticon.com/png/512/3404/premium/3404417.png?token=exp=1658063498~hmac=9004bed658a475d3b3e181553818eee6",
+                    ava: "https://cdn-icons-png.flaticon.com/512/4509/4509624.png",
                     name: "Maksim"
                 },
                 {
@@ -95,17 +95,17 @@ export let store: StoreType = {
                 },
                 {
                     id: 3,
-                    ava: "https://cdn-icons.flaticon.com/png/512/2423/premium/2423917.png?token=exp=1658062838~hmac=87d38e50bc4b82ec370b97ff5a53a723",
+                    ava: "https://cdn-icons-png.flaticon.com/512/6725/6725128.png",
                     name: "Merve"
                 },
                 {
                     id: 4,
-                    ava: "https://cdn-icons.flaticon.com/png/512/3667/premium/3667820.png?token=exp=1658064393~hmac=d9a03a2aff29f2937720ce1e088d34bc",
+                    ava: "https://cdn-icons-png.flaticon.com/512/7923/7923349.png",
                     name: "Robb"
                 },
                 {
                     id: 5,
-                    ava: "https://cdn-icons.flaticon.com/png/512/3136/premium/3136101.png?token=exp=1658062917~hmac=533467193df287053ba0140da248f0b0",
+                    ava: "https://cdn-icons-png.flaticon.com/512/6567/6567139.png",
                     name: "Alex"
                 }
             ],

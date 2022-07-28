@@ -42,8 +42,6 @@ export type StoreType = {
     getState: () => RootStateType,
     rerenderEntireTree: () => void,
     subscribe: (observer: () => void) => void,
-    _addPost: () => void,
-    _updateNewPostText: (newText: string) => void,
     dispatch: (action: ActionsTypes) => void
 }
 
@@ -191,19 +189,6 @@ export let store: StoreType = {
     },
     subscribe(observer) {
         this.rerenderEntireTree = observer;
-    },
-    _addPost() {
-        let newPost: PostsDataType = {
-            _id: v1(),
-            message: this._state.profilePage.newPostText,
-            likesCount: 0
-        }
-        this._state.profilePage.postsData.push(newPost);
-        this.rerenderEntireTree();
-    },
-    _updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this.rerenderEntireTree();
     },
     dispatch(action) {
         this._state.profilePage = profileReducer(this._state.profilePage, action);

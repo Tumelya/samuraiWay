@@ -141,12 +141,12 @@ export let store: StoreType = {
             },
             {
                 id: 3,
-                ava: "https://cdn-icons.flaticon.com/png/512/2423/premium/2423917.png?token=exp=1658062838~hmac=87d38e50bc4b82ec370b97ff5a53a723",
+                ava: "https://cdn-icons-png.flaticon.com/512/6725/6725128.png",
                 name: "Merve"
             },
             {
                 id: 4,
-                ava: "https://cdn-icons.flaticon.com/png/512/3136/premium/3136101.png?token=exp=1658062917~hmac=533467193df287053ba0140da248f0b0",
+                ava: "https://cdn-icons-png.flaticon.com/512/6567/6567139.png",
                 name: "Alex"
             },
             {
@@ -156,7 +156,7 @@ export let store: StoreType = {
             },
             {
                 id: 6,
-                ava: "https://cdn-icons.flaticon.com/png/512/2423/premium/2423845.png?token=exp=1658063305~hmac=fb55b129f657d69deb41db9e42715ac4",
+                ava: "https://cdn-icons-png.flaticon.com/512/7206/7206458.png",
                 name: "Martina"
             },
             {

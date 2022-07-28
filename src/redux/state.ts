@@ -210,19 +210,5 @@ export let store: StoreType = {
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
 
         this.rerenderEntireTree();
-
-        /*if (action.type === ADD_POST) {
-            this._addPost();
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._updateNewPostText(action.newText);
-        } else if (action.type === ADD_MESSAGE) {
-            let body = this._state.dialogsPage.newMessageBody;
-            this._state.dialogsPage.newMessageBody = "";
-            this._state.dialogsPage.messagesData.push({id: v1(), messages: body, time: "00:00"})
-            this.rerenderEntireTree();
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogsPage.newMessageBody = action.body;
-            this.rerenderEntireTree();
-        }*/
     }
 }

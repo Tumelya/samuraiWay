@@ -2,15 +2,9 @@ import React, {ChangeEvent} from "react";
 import s from "./Dialogs.module.css";
 import {DialogItem} from "./DialogItem/DialogItem";
 import {Message} from "./Message/Message";
-import {
-    ActionsTypes,
-    addMessageActionCreator,
-    DialogsDataType,
-    MessagesDataType,
-    updateNewMessageBodyActionCreator
-} from "../../redux/state";
+import {ActionsTypes, DialogsDataType, MessagesDataType} from "../../redux/state";
 import {Button} from "../Button/Button";
-
+import {addMessageActionCreator, updateNewMessageBodyActionCreator} from "../../redux/dialogsReducer";
 
 type DialogsPropsType = {
     dialogsData: Array<DialogsDataType>
@@ -18,6 +12,7 @@ type DialogsPropsType = {
     newMessageBody: string
     dispatch: (action: ActionsTypes) => void
 }
+
 export const Dialogs: React.FC<DialogsPropsType> = (props) => {
 
     const onSendMessageClick = () => {

@@ -1,6 +1,6 @@
 import {v1} from "uuid";
-import {profileReducer} from "./profileReducer";
-import {dialogsReducer} from "./dialogsReducer";
+import {addPostActionCreator, profileReducer, updateNewPostTextActionCreator} from "./profileReducer";
+import {addMessageActionCreator, dialogsReducer, updateNewMessageBodyActionCreator} from "./dialogsReducer";
 
 export type DialogsDataType = {
     id: number
@@ -51,11 +51,11 @@ export type ActionsTypes =
     | ReturnType<typeof addMessageActionCreator>
     | ReturnType<typeof updateNewMessageBodyActionCreator>
 
-const ADD_POST = "ADD-POST";
+/*const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
-export const addPostActionCreator = () => {
+const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";*/
+/*export const addPostActionCreator = () => {
     return {
         type: ADD_POST
     } as const
@@ -76,7 +76,7 @@ export const updateNewMessageBodyActionCreator = (body: string) => {
         type: UPDATE_NEW_MESSAGE_BODY,
         body: body
     } as const
-}
+}*/
 
 
 export let store: StoreType = {

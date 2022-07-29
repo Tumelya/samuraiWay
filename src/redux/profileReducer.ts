@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import {ActionsTypes, PostsDataType, ProfilePageType} from "./state";
+import {ActionsTypes, PostsDataType, ProfilePageType} from "./store";
 
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";

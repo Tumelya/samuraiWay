@@ -51,34 +51,6 @@ export type ActionsTypes =
     | ReturnType<typeof addMessageActionCreator>
     | ReturnType<typeof updateNewMessageBodyActionCreator>
 
-/*const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";*/
-/*export const addPostActionCreator = () => {
-    return {
-        type: ADD_POST
-    } as const
-}
-export const updateNewPostTextActionCreator = (newText: string) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT,
-        newText: newText
-    } as const
-}
-export const addMessageActionCreator = () => {
-    return {
-        type: ADD_MESSAGE
-    } as const
-}
-export const updateNewMessageBodyActionCreator = (body: string) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_BODY,
-        body: body
-    } as const
-}*/
-
-
 export let store: StoreType = {
     _state: {
         dialogsPage: {

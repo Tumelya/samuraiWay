@@ -15,6 +15,41 @@ export const updateNewMessageBodyActionCreator = (body: string) => {
     } as const
 }
 
+let InitialState = {
+    dialogsData: [
+        {
+            id: 1,
+            ava: "https://cdn-icons-png.flaticon.com/512/4509/4509624.png",
+            name: "Maksim"
+        },
+        {
+            id: 2,
+            ava: "https://cdn-icons-png.flaticon.com/512/7665/7665682.png",
+            name: "Maria"
+        },
+        {
+            id: 3,
+            ava: "https://cdn-icons-png.flaticon.com/512/6725/6725128.png",
+            name: "Merve"
+        },
+        {
+            id: 4,
+            ava: "https://cdn-icons-png.flaticon.com/512/7923/7923349.png",
+            name: "Robb"
+        },
+        {
+            id: 5,
+            ava: "https://cdn-icons-png.flaticon.com/512/6567/6567139.png",
+            name: "Alex"
+        }
+    ],
+    messagesData: [
+        {id: v1(), messages: "hi", time: "10:00"}, {id: v1(), messages: "what's up", time: "10:01"},
+        {id: v1(), messages: "yo", time: "10:02"}, {id: v1(), messages: "nice look", time: "10:03"}
+    ],
+    newMessageBody: ""
+}
+
 export const dialogsReducer = (state: DialogsPageType, action: ActionsTypes) => {
     switch (action.type) {
         case ADD_MESSAGE:
